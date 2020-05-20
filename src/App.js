@@ -4,17 +4,13 @@ import Quizzer from './Quizzer';
 
 class App extends React.Component {
 
-
     constructor(props) {
         super(props);
         this.state = {quiz_type: 0};
     }
 
     updateQuizType(quiz_type) {
-        this.setState({
-            quiz_type
-        })
-        console.log('updated state', this.state.quiz_type)
+        this.setState({ quiz_type })
     }
 
     render() {
