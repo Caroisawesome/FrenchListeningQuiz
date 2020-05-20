@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Quizzer from './Quizzer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+
+    constructor(props) {
+        super(props);
+        this.state = {quiz_type: 0};
+    }
+
+    updateQuizType(quiz_type) {
+        this.setState({
+            quiz_type
+        })
+        console.log('updated state', this.state.quiz_type)
+    }
+
+    render() {
+        return (
+                <div className="App">
+                <header className="App-header">
+                <button onClick={() => this.updateQuizType(0)}> Dates</button>
+                <button onClick={() => this.updateQuizType(1)}> Numbers</button>
+                <Quizzer quiz_type={this.state.quiz_type}/>
+                </header>
+                </div>
+        );
+    }
+
 }
 
 export default App;
