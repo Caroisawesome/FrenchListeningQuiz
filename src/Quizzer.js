@@ -4,17 +4,34 @@ import momentRandom from 'moment-random';
 
 export default class Quizzer extends React.Component {
 
+    textToSpeech(text) {
+        console.log("text")
+        window.VoiceRSS.speech({
+            key: process.env.REACT_APP_VOICE_RSS_API_KEY,
+            src: text,
+            hl: 'fr-fr',
+            r: 0,
+            c: 'mp3',
+            f: '44khz_16bit_stereo',
+            ssml: false
+        });
+    }
+
     randomDate() {
         const dt = momentRandom();
         return moment(dt).format("dddd, MMMM Do YYYY, h:mm:ss a");
     }
 
     getNext(quiz_type) {
+        let txt = ""
         if (quiz_type) {
-            return Math.ceil(Math.random() * 100000)
+            txt =  Math.ceil(Math.random() * 100000)
         } else  {
-            return this.randomDate()
+            txt = this.randomDate()
         }
+
+        this.textToSpeech(txt)
+        return txt
     }
 
     render() {
