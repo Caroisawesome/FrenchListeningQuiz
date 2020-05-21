@@ -1,11 +1,11 @@
 import React from 'react';
 import moment from 'moment';
-import momentRandom from 'moment-random';
+import momentRandom from 'moment-random'
+import 'moment/locale/fr';
 
 export default class Quizzer extends React.Component {
 
     textToSpeech(text) {
-        console.log("text")
         window.VoiceRSS.speech({
             key: process.env.REACT_APP_VOICE_RSS_API_KEY,
             src: text,
@@ -18,6 +18,7 @@ export default class Quizzer extends React.Component {
     }
 
     randomDate() {
+        moment.locale('fr')
         const dt = momentRandom();
         return moment(dt).format("dddd, MMMM Do YYYY, h:mm:ss a");
     }
