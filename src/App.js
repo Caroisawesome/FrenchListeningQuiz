@@ -21,14 +21,14 @@ class App extends React.Component {
                 <header >
                 <h1><FontAwesomeIcon icon={faFrog} />Quizzer</h1>
                 </header> 
-                <body className="App-content">
+                <div className="App-content">
                 <div>
                 <button onClick={() => this.updateQuizType(0)}> Date</button>
                 <button onClick={() => this.updateQuizType(1)}> Number</button>
                 </div>
                 <Quizzer quiz_type={this.state.quiz_type}/>
 
-            </body>
+            </div>
                 </div>
         );
     }

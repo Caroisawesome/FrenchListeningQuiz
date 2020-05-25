@@ -73,16 +73,15 @@ export default class Quizzer extends React.Component {
 
     getCorrectnessStyle() {
         const correct = this.checkCorrectness()
-        const color = correct ? 'green' : 'red'
-        return {backgroundColor: color}
+        return correct ? 'success' : 'fail'
     }
 
     render() {
         return (
                 <div>
                 <h3>Number Correct: {this.state.num_correct}</h3>
-                <form>
-                <input type="text" style={this.getCorrectnessStyle()} onChange={this.handleChange.bind(this)} />
+                <form id="quizzer-form">
+                <input type="text" className={this.getCorrectnessStyle()} onChange={this.handleChange.bind(this)} />
                 </form>
             </div>
         )

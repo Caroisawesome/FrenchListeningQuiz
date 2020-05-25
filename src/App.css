@@ -28,6 +28,21 @@
   color: #61dafb;
 }
 
+form#quizzer-form input {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.success {
+    background-color: #98FB98;
+    border-color: #98FB98;
+}
+
+.fail {
+    background-color: #F08080;
+    border-color: #F08080;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
