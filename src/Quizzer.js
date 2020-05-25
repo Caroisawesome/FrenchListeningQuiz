@@ -8,11 +8,12 @@ export default class Quizzer extends React.Component {
     constructor(props) {
         super(props)
         this.dup = true
-        this.state = { value : "", text: "" }
+        this.state = { value : "", text: "", num_correct: 0 }
     }
 
     componentDidUpdate(prevProps, prevState) {
         if (this.state.value !== prevState.value) return
+        if (this.state.num_correct !== prevState.num_correct) return
         const text = this.getNext(this.props.quiz_type)
         if (text) this.setState({ text })
     }
@@ -51,10 +52,24 @@ export default class Quizzer extends React.Component {
     }
 
     handleChange(e) {
-        this.setState({value: e.target.value});
+
+        if (this.state.text !== "" && e.target.value === this.state.text) {
+            this.setState(st => ({
+                num_correct: st.num_correct++,
+                value: "",
+                text: ""
+            }))
+            e.target.value = ""
+        } else {
+            this.setState({value: e.target.value});
+        }
     }
 
+
     checkCorrectness() {
+
+
+
         const len = this.state.value.length
         return (this.state.value.slice(0,len) === this.state.text.slice(0,len))
     }
@@ -67,9 +82,12 @@ export default class Quizzer extends React.Component {
 
     render() {
         return (
+                <div>
+                <h3>Number Correct: {this.state.num_correct}</h3>
                 <form>
                 <input type="text" style={this.getCorrectnessStyle()} onChange={this.handleChange.bind(this)} />
                 </form>
+            </div>
         )
     }
 }

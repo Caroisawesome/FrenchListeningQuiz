@@ -17,8 +17,8 @@ class App extends React.Component {
         return (
                 <div className="App">
                 <header className="App-header">
-                <button onClick={() => this.updateQuizType(0)}> Dates</button>
-                <button onClick={() => this.updateQuizType(1)}> Numbers</button>
+                <button onClick={() => this.updateQuizType(0)}> Date</button>
+                <button onClick={() => this.updateQuizType(1)}> Number</button>
                 <Quizzer quiz_type={this.state.quiz_type}/>
                 </header>
                 </div>
