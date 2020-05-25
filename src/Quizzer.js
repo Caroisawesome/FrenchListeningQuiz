@@ -67,9 +67,6 @@ export default class Quizzer extends React.Component {
 
 
     checkCorrectness() {
-
-
-
         const len = this.state.value.length
         return (this.state.value.slice(0,len) === this.state.text.slice(0,len))
     }

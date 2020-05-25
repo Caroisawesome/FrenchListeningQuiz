@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import Quizzer from './Quizzer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFrog } from '@fortawesome/free-solid-svg-icons'
 
 class App extends React.Component {
 
@@ -16,11 +18,17 @@ class App extends React.Component {
     render() {
         return (
                 <div className="App">
-                <header className="App-header">
+                <header >
+                <h1><FontAwesomeIcon icon={faFrog} />Quizzer</h1>
+                </header> 
+                <body className="App-content">
+                <div>
                 <button onClick={() => this.updateQuizType(0)}> Date</button>
                 <button onClick={() => this.updateQuizType(1)}> Number</button>
+                </div>
                 <Quizzer quiz_type={this.state.quiz_type}/>
-                </header>
+
+            </body>
                 </div>
         );
     }
