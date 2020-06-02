@@ -33,7 +33,7 @@ export default class Quizzer extends React.Component {
     randomDate() {
         moment.locale('fr')
         const dt = momentRandom();
-        return moment(dt).format("dddd MMMM Do");
+        return moment(dt).format("dddd MMMM Do YYYY");
     }
 
     getNext(quiz_type) {
@@ -41,7 +41,7 @@ export default class Quizzer extends React.Component {
         if (this.dup) return
         let txt = ""
         if (quiz_type) {
-            txt =  Math.ceil(Math.random() * 100000).toString();
+            txt =  Math.ceil(Math.random() * 10000).toString();
         } else  {
             txt = this.randomDate()
         }
