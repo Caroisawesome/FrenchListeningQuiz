@@ -27,13 +27,13 @@ export default class Quizzer extends React.Component {
             c: 'mp3',
             f: '44khz_16bit_stereo',
             ssml: false
-        });
+        })
     }
 
     randomDate() {
         moment.locale('fr')
         const dt = momentRandom();
-        return moment(dt).format("dddd, MMMM Do YYYY");
+        return moment(dt).format("dddd MMMM Do");
     }
 
     getNext(quiz_type) {

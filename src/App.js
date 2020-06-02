@@ -19,12 +19,18 @@ class App extends React.Component {
         return (
                 <div className="App">
                 <header >
-                <h1><FontAwesomeIcon icon={faFrog} />Quizzer</h1>
+                <h1><FontAwesomeIcon icon={faFrog} />CaroQuizzer</h1>
                 </header> 
                 <div className="App-content">
+                <div className="instructions">
+                <p>Test your listening skills!</p>
+                <p>Make sure your audio is turned on, and select an option below.</p>
+                <p>Enter what you hear in the space provided.</p>
+                <hr/>
+            </div>
                 <div>
-                <button onClick={() => this.updateQuizType(0)}> Date</button>
-                <button onClick={() => this.updateQuizType(1)}> Number</button>
+                <button className="btn" onClick={() => this.updateQuizType(0)}> Date</button>
+                <button className="btn" onClick={() => this.updateQuizType(1)}> Number</button>
                 </div>
                 <Quizzer quiz_type={this.state.quiz_type}/>
 

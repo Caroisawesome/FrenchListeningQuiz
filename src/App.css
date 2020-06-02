@@ -1,6 +1,6 @@
 .App {
     text-align: center;
-    background-color: #282c34;
+    background-color: #302834; /* #282c34  */
 }
 
 .App-logo {
@@ -15,10 +15,9 @@
 }
 
 .App-content {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
   flex-direction: column;
@@ -26,6 +25,20 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.instructions {
+    margin-bottom: 100px;
+}
+
+header {
+    min-height: 20vh;
+}
+
+header h1 {
+    margin:0px;
+    padding:20px;
+    color: #111012;
 }
 
 form#quizzer-form input {
@@ -41,6 +54,16 @@ form#quizzer-form input {
 .fail {
     background-color: #F08080;
     border-color: #F08080;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #9370DB;
+    border-color: #9370DB;
+    font-weight: bold;
 }
 
 @keyframes App-logo-spin {
