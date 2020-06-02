@@ -54,11 +54,12 @@ export default class Quizzer extends React.Component {
     handleChange(e) {
 
         if (this.state.text !== "" && e.target.value === this.state.text) {
-            this.setState(st => ({
-                num_correct: st.num_correct++,
-                value: "",
-                text: ""
-            }))
+            const num = this.state.num_correct;
+            this.setState({
+                    num_correct: num+1,
+                    value: "",
+                    text: ""
+            })
             e.target.value = ""
         } else {
             this.setState({value: e.target.value});
