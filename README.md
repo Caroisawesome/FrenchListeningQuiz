@@ -1,6 +1,8 @@
-# CaroQuizzer
+# CaroQuizzer (http://caro-quizzer.surge.sh)
 
 This App is to help English speakers to test their French listening skills. In particular, it quizzes the user on French numbers and dates. This project uses the [VoiceRSS API](http://www.voicerss.org/default.aspx) to access text to speech capabilities. [Moment.js](https://momentjs.com) is used to generate dates. 
+
+Visit the live site here: http://caro-quizzer.surge.sh
 
 ## Run the Project
 
