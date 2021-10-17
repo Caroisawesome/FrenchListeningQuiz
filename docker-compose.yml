@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+ french:
+    container_name: french
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 3001:3000
+    environment:
+      env_file: .env
+
+    stdin_open: true
+    tty: true
